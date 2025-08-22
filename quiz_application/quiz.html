@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>quiz</title>
+
+  <style>
+    body {
+      font-family: arial, sans-serif;
+      background: #1a6190;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+    }
+    .quiz {
+      background: #ffffff;
+      padding: 30px;
+      border-radius: 16px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      width: 420px;
+      position: relative;
+    }
+    h1 {
+      text-decoration: underline;
+      text-align: center;
+      margin-bottom: 20px;
+      color: #062446;
+    }
+    h2 {
+      margin: 20px 0 10px;
+      color: #0d47a1;
+    }
+    label {
+      display: block;
+      padding: 10px;
+      margin: 6px 0;
+      background:  #5c9acc;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    label:hover {
+      background: #a0e8d1;
+    }
+    input[type="radio"] {
+      display: none;
+    }
+    input:checked + label {
+      background: #64b5f6;
+      color: white;
+      font-weight: bold;
+    }
+    .feedback {
+      display: none;
+      margin: 8px 0 15px;
+      font-weight: bold;
+    }
+    .correct {
+      color: green;
+    }
+    .wrong {
+      color: red;
+    }
+/* Navigation buttons */
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 15px;
+    }
+    .nav-button {
+      padding: 10px 18px;
+      background: #3880a7;
+      color: white;
+      border-radius: 8px;
+      cursor: pointer;
+      text-align: center;
+      font-size: 14px;
+      transition: 0.3s;
+    }
+    .nav-button:hover {
+      background: #81ddc6;
+    }
+
+    /* Slides logic */
+    .slide { display: none; }
+     #step1:checked ~ .q1,
+     #step2:checked ~ .q2,
+     #step3:checked ~ .q3,
+     #step4:checked ~ .q4,
+     #step5:checked ~ .q5,
+     #step6:checked ~ .q6 {
+      display: block;
+    }
+
+    /* Hide step radios */
+    #step1, #step2, #step3, #step4, #step5, #step6 { display: none; }
+  
+  </style>
+
+</head>
+<body>
+  <div class="quiz">
+    <h1>PROGRAMMING QUIZ</h1>
+
+    <!-- steps controls -->
+     <input type="radio" id="step1" name="step" checked>
+     <input type="radio" id="step2" name="step" >
+     <input type="radio" id="step3" name="step" >
+     <input type="radio" id="step4" name="step" >
+     <input type="radio" id="step5" name="step" >
+     <input type="radio" id="step6" name="step" >
+
+    <!-- question 1 -->
+    <div class="slide q1">
+     <h2>1. Which language is used for web page structure?</h2>
+     <input type="radio" id="q1a" name="q1">
+     <label for="q1a">HTML</label>
+     <input type="radio" id="q1b" name="q1">
+     <label for="q1b">CSS</label>
+     <input type="radio" id="q1c" name="q1">
+     <label for="q1c">Python</label>
+     <div class="feedback correct" id="f1c">✅ Correct!</div>
+     <div class="feedback wrong">❌ Wrong Answer</div>
+     <div class="nav">
+      <span></span>
+      <label for="step2" class="nav-button">Next ➡️</label>
+     </div>
+    </div>
+
+    <!-- question 2 -->
+    <div class="slide q2">
+     <h2>2. Which CSS property changes text color?</h2>
+     <input type="radio" id="q2a" name="q2">
+     <label for="q2a">background-color</label>
+     <input type="radio" id="q2b" name="q2">
+     <label for="q2b">color</label>
+     <input type="radio" id="q2c" name="q2">
+     <label for="q2c">font-style</label>
+     <div class="feedback correct">✅ Correct!</div>
+     <div class="feedback wrong">❌ Wrong Answer</div>
+     <div class="nav">
+        <label for="step1" class="nav-button">⬅️ Back</label>
+        <label for="step3" class="nav-button">Next ➡️</label>
+      </div>
+    </div>
+
+    <!-- question 3 -->
+    <div class="slide q3">
+     <h2>3. Who is known as the father of C language?</h2>
+     <input type="radio" id="q3a" name="q3">
+     <label for="q3a">James Gosling</label>
+     <input type="radio" id="q3b" name="q3">
+     <label for="q3b">Dennis Ritchie</label>
+     <input type="radio" id="q3c" name="q3">
+     <label for="q3c">Bjarne Stroustrup</label>
+     <div class="feedback correct">✅ Correct!</div>
+     <div class="feedback wrong">❌ Wrong Answer</div>
+      <div class="nav">
+        <label for="step2" class="nav-button">⬅️ Back</label>
+        <label for="step4" class="nav-button">Next ➡️</label>
+      </div>
+    </div>
+
+    <!-- question 4 -->
+    <div class="slide q4">
+     <h2>4. Which of these is NOT a programming language?</h2>
+     <input type="radio" id="q4a" name="q4">
+     <label for="q4a">Python</label>
+     <input type="radio" id="q4b" name="q4">
+     <label for="q4b">Java</label>
+     <input type="radio" id="q4c" name="q4">
+     <label for="q4c">HTML</label>
+     <div class="feedback correct">✅ Correct!</div>
+     <div class="feedback wrong">❌ Wrong Answer</div>
+     <div class="nav">
+        <label for="step3" class="nav-button">⬅️ Back</label>
+        <label for="step5" class="nav-button">Next ➡️</label>
+      </div>
+    </div>
+    
+    <!-- question 5 -->
+    <div class="slide q5">
+     <h2>5. Which symbol is used for comments in Python?</h2>
+     <input type="radio" id="q5a" name="q5">
+     <label for="q5a">//</label>
+     <input type="radio" id="q5b" name="q5">
+     <label for="q5b">#</label>
+     <input type="radio" id="q5c" name="q5">
+     <label for="q5c">--</label>
+     <div class="feedback correct">✅ Correct!</div>
+     <div class="feedback wrong">❌ Wrong Answer</div>
+     <div class="nav">
+        <label for="step4" class="nav-button">⬅️ Back</label>
+        <label for="step6" class="nav-button">Next ➡️</label>
+      </div>
+    </div>
+
+    <!-- question 6 -->
+    <div class="slide q6">
+     <h2>6. Which tag is used to link CSS in HTML?</h2>
+     <input type="radio" id="q6a" name="q6">
+     <label for="q6a">&lt;script&gt;</label>
+     <input type="radio" id="q6b" name="q6">
+     <label for="q6b">&lt;link&gt;</label>
+     <input type="radio" id="q6c" name="q6">
+     <label for="q6c">&lt;style&gt;</label>
+     <div class="feedback correct">✅ Correct!</div>
+     <div class="feedback wrong">❌ Wrong Answer</div> 
+     <div class="nav">
+        <label for="step5" class="nav-button">⬅️ Back</label>
+        <span style="color:#1565c0; font-weight:bold; margin-top:10px;">🎉 Quiz Completed!</span>
+      </div>
+    </div> 
+
+  </div>
+  
+</body>
+</html>
